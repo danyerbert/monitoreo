@@ -25,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $atendio = RegistrosLlamada::select(DB::raw());
-        return view('home');
+        $atendio = RegistrosLlamada::select('atendio_llamada', DB::raw('COUNT(*) as total'))
+        ->groupBy('atendio_llamada')
+        ->get();
+        return view('home', compact('atendio'));
     }
 }
