@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $atendio = RegistrosLlamada::select(DB::raw());
+        /*$atendio = RegistrosLlamada::select(DB::raw());*/
         return view('home');
     }
 }
