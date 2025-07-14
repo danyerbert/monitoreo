@@ -22,10 +22,10 @@ class RegistrosLlamadaController extends Controller
 
     public function index(Request $request): View
     {
-        $registrosLlamadas = RegistrosLlamada::paginate();
-
-        return view('registros-llamada.index', compact('registrosLlamadas'))
-            ->with('i', ($request->input('page', 1) - 1) * $registrosLlamadas->perPage());
+        $now = Carbon::now();
+        $fecha_actual = $now->format('Y-m-d');
+        $registrosLlamadas = RegistrosLlamada::all()->where('fecha_contacto', $fecha_actual);
+        return view('registros-llamada.index', compact('registrosLlamadas'));
     }
 
     public function create(): View

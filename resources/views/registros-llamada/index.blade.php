@@ -82,7 +82,6 @@
                         </div>
                     </div>
                 </div>
-                {!! $registrosLlamadas->withQueryString()->links() !!}
             </div>
         </div>
     </div>
