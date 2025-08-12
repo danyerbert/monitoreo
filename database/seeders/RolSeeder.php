@@ -35,13 +35,13 @@ class RolSeeder extends Seeder
         Permission::create(['name' => 'estados.index',
                             'description' => 'Ver lista de Estados'])->assignRole($rolAdministrador);
         Permission::create(['name' => 'estados.create',
-                            'description' => 'Registrar Usuario'])->assignRole($rolAdministrador);;
+                            'description' => 'Registrar Estado'])->assignRole($rolAdministrador);;
         Permission::create(['name' => 'estados.show',
                             'description' => 'Ver Estado'])->assignRole($rolAdministrador);;
         Permission::create(['name' => 'estados.edit',
                             'description' => 'Editar Estado'])->assignRole($rolAdministrador);;
         Permission::create(['name' => 'estados.destroy',
-                            'description' => 'Elimnar Usuario'])->assignRole($rolAdministrador);;
+                            'description' => 'Elimnar Estado'])->assignRole($rolAdministrador);;
 
         //Permisos para el Modelo de PERSONAS
         Permission::create(['name' => 'personas.index',
