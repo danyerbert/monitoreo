@@ -19,10 +19,11 @@ class EstadoController extends Controller
 
     public function index(Request $request): View
     {
-        $estados = Estado::paginate();
+        $estados = Estado::paginate(10);
 
-        return view('estado.index', compact('estados'))
-            ->with('i', ($request->input('page', 1) - 1) * $estados->perPage());
+        return view('estado.index', compact('estados'));
+
+        /*->with('i', ($request->input('page', 1) - 1) * $estados->perPage()) */
     }
 
     /**
@@ -43,7 +44,7 @@ class EstadoController extends Controller
         Estado::create($request->validated());
 
         return Redirect::route('estados.index')
-            ->with('success', 'Estado created successfully.');
+            ->with('success', 'Estado creado correctamente.');
     }
 
     /**
@@ -74,7 +75,7 @@ class EstadoController extends Controller
         $estado->update($request->validated());
 
         return Redirect::route('estados.index')
-            ->with('success', 'Estado updated successfully');
+            ->with('success', 'Estado actualizado correctamente');
     }
 
     public function destroy($id): RedirectResponse
@@ -82,6 +83,6 @@ class EstadoController extends Controller
         Estado::find($id)->delete();
 
         return Redirect::route('estados.index')
-            ->with('success', 'Estado deleted successfully');
+            ->with('success', 'Estado eliminado correctamente');
     }
 }

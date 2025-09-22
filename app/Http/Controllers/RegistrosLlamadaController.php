@@ -22,10 +22,21 @@ class RegistrosLlamadaController extends Controller
 
     public function index(Request $request): View
     {
-        $now = Carbon::now();
+        $fechaBusqueda = $request->input('fecha', Carbon::now()->format('Y-m-d'));
+
+        $registrosLlamadas = RegistrosLlamada::query();
+
+        $registrosLlamadas->whereDate('fecha_contacto', $fechaBusqueda);
+
+        $registrosLlamadas = $registrosLlamadas->get();
+
+        return view('registros-llamada.index', compact('registrosLlamadas'));
+        
+        
+        /*$now = Carbon::now();
         $fecha_actual = $now->format('Y-m-d');
         $registrosLlamadas = RegistrosLlamada::all()->where('fecha_contacto', $fecha_actual);
-        return view('registros-llamada.index', compact('registrosLlamadas'));
+        return view('registros-llamada.index', compact('registrosLlamadas'));*/
     }
 
     public function create(): View
@@ -44,7 +55,7 @@ class RegistrosLlamadaController extends Controller
         RegistrosLlamada::create($request->validated());
 
         return Redirect::route('registros-llamadas.index')
-            ->with('success', 'RegistrosLlamada created successfully.');
+            ->with('success', 'Llamada registrada exitosamente.');
     }
 
     public function show($id): View
@@ -68,7 +79,7 @@ class RegistrosLlamadaController extends Controller
         $registrosLlamada->update($request->validated());
 
         return Redirect::route('registros-llamadas.index')
-            ->with('success', 'RegistrosLlamada updated successfully');
+            ->with('success', 'Llamada actualizada correctamente');
     }
 
     public function destroy($id): RedirectResponse
@@ -76,6 +87,6 @@ class RegistrosLlamadaController extends Controller
         RegistrosLlamada::where('id_registro_llamadas', $id)->delete();
 
         return Redirect::route('registros-llamadas.index')
-            ->with('success', 'RegistrosLlamada deleted successfully');
+            ->with('success', 'Llamada eliminada correctamente');
     }
 }

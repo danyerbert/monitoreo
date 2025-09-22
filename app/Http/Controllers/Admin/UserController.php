@@ -16,7 +16,6 @@ class UserController extends Controller
 
     public function index(Request $request) : View
     {
-        //
         $users = User::all();
         return view('admin.users.index', compact('users'));
     }
@@ -34,7 +33,7 @@ class UserController extends Controller
 
         User::create($request->all());
 
-        return view('admin.users.index')->with('success', 'Registro realizado correctamente');
+        return redirect()->route('admin.users.index')->with('success', 'Registro realizado correctamente');
     }
     public function edit(User $user)
     {
@@ -49,6 +48,20 @@ class UserController extends Controller
         $user->roles()->sync($request->roles);
         return Redirect::route('admin.users.edit', $user)
             ->with('success', 'Rol Guardado');
+    }
+    public function destroy($id){
+        try {
+            $user = User::find($id);
+            if ($user===null) {
+                return redirect()->route('admin.users.index')->with('error', 'Error en encontrar usuario.');
+            }
+            else {
+                $user->delete();
+                return redirect()->route('admin.users.index')->with('sucess', 'Usuario eliminado correctamente.');
+            }
+        } catch (\Exception $e) {
+            return redirect()->route('admin.users.index')->with('sucess', $e->getMessage());
+        }
     }
 
 }

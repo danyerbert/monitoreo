@@ -50,7 +50,7 @@
                                         <td>
                                             <div class="btn-group" role="group">
                                                 <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-sm btn-primary">Cambiar Rol</a>
-                                                <form action="{{ route('admin.roles.destroy', $user->id) }}" method="POST">
+                                                <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>

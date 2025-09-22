@@ -16,11 +16,21 @@
                                 {{ __('Registros Llamadas') }}
                             </span>
 
+                            <div class="float-right">
+                                <form action="{{ route('registros-llamadas.index') }}" method="GET" class="d-flex align-items-center">
+                                <div class="form-group">
+                                    <label for="fecha">Buscar por Fecha:</label>
+                                    <input type="date" class="form-control" id="fecha" name="fecha">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </form>
+                            </div>
                              <div class="float-right">
-                                <a href="{{ route('registros-llamadas.create') }}" class="btn btn-primary  float-right"  data-placement="left">
+                                <a href="{{ route('registros-llamadas.create') }}" class="btn btn-primary float-right"  data-placement="left">
                                   {{ __('Registrar') }}
                                 </a>
                               </div>
+                              
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -47,7 +57,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($registrosLlamadas as $registrosLlamada)
+                                    @forelse ($registrosLlamadas as $registrosLlamada)
                                         <tr>
 										    <td >{{ $registrosLlamada->id_registro_llamadas }}</td>
 										    <td >{{ $registrosLlamada->persona->nombre_completo }}</td>
@@ -76,7 +86,13 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                        @empty
+                                            <tr>
+                                                <td colspan="9" class="text-center">
+                                                    No se encontraron registros de llamadas para esta fecha.
+                                                </td>
+                                            </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

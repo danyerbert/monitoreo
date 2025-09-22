@@ -53,7 +53,7 @@
                                                     <form action="{{ url('estados/'. $estado->id) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                        <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Estas seguro que desea eliminar estado?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash-can"></i> {{ __('Eliminar') }}</button>
                                                     </form>
                                                 </div>
                                                 
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        {!! $estados->withQueryString()->links() !!}
+                        {{ $estados->links() }}
                     </div>
                 </div>
             </div>
