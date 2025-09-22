@@ -18,12 +18,12 @@
 
                             <div class="float-right">
                                 <form action="{{ route('registros-llamadas.index') }}" method="GET" class="d-flex align-items-center">
-                                <div class="form-group">
-                                    <label for="fecha">Buscar por Fecha:</label>
-                                    <input type="date" class="form-control" id="fecha" name="fecha">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Buscar</button>
-                            </form>
+                                    <div class="form-group">
+                                        <label for="fecha">Buscar por Fecha:</label>
+                                        <input type="date" class="form-control" id="fecha" name="fecha">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Buscar</button>
+                                </form>
                             </div>
                              <div class="float-right">
                                 <a href="{{ route('registros-llamadas.create') }}" class="btn btn-primary float-right"  data-placement="left">
@@ -44,7 +44,6 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
 									    <th>Operador</th>
 									    <th>Estado</th>
 									    <th>Fecha Contacto</th>
@@ -58,14 +57,12 @@
                                 <tbody>
                                     @forelse ($registrosLlamadas as $registrosLlamada)
                                         <tr>
-										    <td >{{ $registrosLlamada->id_registro_llamadas }}</td>
 										    <td >{{ $registrosLlamada->persona->nombre_completo }}</td>
 										    <td >{{ $registrosLlamada->estado->estado }}</td>
 										    <td >{{ $registrosLlamada->fecha_contacto }}</td>
 										    <td >{{ $registrosLlamada->hora_contacto }}</td>
 										    <td >{{ $registrosLlamada->atendio_llamada }}</td>
 										    <td >{{ $registrosLlamada->observaciones }}</td>
-
                                             <td>
                                                 <div class="btn-group" role="group">
                                                     @can('registro-llamadas.show')

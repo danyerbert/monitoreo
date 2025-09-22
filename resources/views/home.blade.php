@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('MercalMarker.png') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -93,7 +94,17 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header">{{ __('Inicio') }}</div>
+                            <div class="card-header">
+                                <div class="float-right">
+                                    <form action="{{ route('home') }}" method="GET" class="d-flex align-items-center">
+                                        <div class="form-group">
+                                            <label for="fecha">Buscar por Fecha:</label>
+                                            <input type="date" class="form-control" id="fecha" name="fecha">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Buscar</button>
+                                    </form>
+                                </div>
+                            </div>
 
                             <div class="card-body">
                                 @if (session('status'))

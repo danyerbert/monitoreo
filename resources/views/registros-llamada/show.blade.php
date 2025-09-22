@@ -19,17 +19,12 @@
                     </div>
 
                     <div class="card-body text-center bg-white">
-                        
-                                <div class="form-group mb-2 mb20">
-                                    <strong>No Registro Llamadas:</strong>
-                                    {{ $registrosLlamada->id_registro_llamadas }}
-                                </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Persona:</strong>
                                     {{ $registrosLlamada->persona->nombre_completo }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Id Estado:</strong>
+                                    <strong>Estado:</strong>
                                     {{ $registrosLlamada->estado->estado }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
