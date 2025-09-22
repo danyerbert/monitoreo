@@ -26,7 +26,6 @@ class RegistrosLlamadaRequest extends FormRequest
 			'id_estado' => 'required',
 			'fecha_contacto' => 'required',
 			'hora_contacto' => 'required',
-			'numero_llamada' => 'required',
 			'atendio_llamada' => 'required|string',
 			'observaciones' => 'required|string',
         ];

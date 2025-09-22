@@ -1,7 +1,7 @@
 <div class="row padding-1 p-1">
     <div class="col-md-12">
         <div class="form-group mb-2 mb20">
-            <label for="id_persona" class="form-label">{{ __('Persona') }}</label>
+            <label for="id_persona" class="form-label">{{ __('Operador') }}</label>
             <select name="id_persona" class="form-control form-select @error('id_persona') is-invalid @enderror" value="{{ old('id_persona', $registrosLlamada?->id_persona) }}" id="id_persona">
             @foreach ($personas as $persona)
                 <option value="{{ $persona->id_persona }}">{{ $persona->nombre_completo }}</option>
@@ -39,11 +39,6 @@
             <input type="time" name="hora_contacto" class="form-control @error('hora_contacto') is-invalid @enderror" value="{{ old('hora_contacto', $registrosLlamada?->hora_contacto) }}" id="hora_contacto" placeholder="{{ $now->format('H:i') }}">
             {!! $errors->first('hora_contacto', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>-->
-        <div class="form-group mb-2 mb20">
-            <label for="numero_llamada" class="form-label">{{ __('Numero Llamada') }}</label>
-            <input type="number" name="numero_llamada" class="form-control @error('numero_llamada') is-invalid @enderror" value="{{ old('numero_llamada', $registrosLlamada?->numero_llamada) }}" id="numero_llamada" placeholder="Numero Llamada">
-            {!! $errors->first('numero_llamada', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
         <div class="form-group mb-20 mb20">
             <label for="atendio_llamada" class="form-label">{{ __('Atendio Llamada') }}</label>
             <div class="form-check">

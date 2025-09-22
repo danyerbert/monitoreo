@@ -45,15 +45,15 @@ class RolSeeder extends Seeder
 
         //Permisos para el Modelo de PERSONAS
         Permission::create(['name' => 'personas.index',
-                            'description' => 'Ver lista de Personas'])->assignRole($rolAdministrador);
+                            'description' => 'Ver lista de Operadores'])->assignRole($rolAdministrador);
         Permission::create(['name' => 'personas.create',
-                            'description' => 'Crear Persona'])->assignRole($rolAdministrador);
+                            'description' => 'Crear Operador'])->assignRole($rolAdministrador);
         Permission::create(['name' => 'personas.show',
-                            'description' => 'Ver Persona'])->assignRole($rolAdministrador);
+                            'description' => 'Ver Operador'])->assignRole($rolAdministrador);
         Permission::create(['name' => 'personas.edit',
-                            'description' => 'Editar Persona'])->assignRole($rolAdministrador);
+                            'description' => 'Editar Operador'])->assignRole($rolAdministrador);
         Permission::create(['name' => 'personas.destroy',
-                            'description' => 'Eliminar Persona'])->assignRole($rolAdministrador);
+                            'description' => 'Eliminar Operador'])->assignRole($rolAdministrador);
 
         //Permisos para el modelo de REGISTRO DE LLAMADAS
         Permission::create(['name' => 'registro-llamadas.index', 

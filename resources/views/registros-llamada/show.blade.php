@@ -41,10 +41,6 @@
                                     {{ $registrosLlamada->hora_contacto }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Numero Llamada:</strong>
-                                    {{ $registrosLlamada->numero_llamada }}
-                                </div>
-                                <div class="form-group mb-2 mb20">
                                     <strong>Atendio Llamada:</strong>
                                     {{ $registrosLlamada->atendio_llamada }}
                                 </div>

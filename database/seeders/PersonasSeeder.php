@@ -14,13 +14,13 @@ class PersonasSeeder extends Seeder
     {
         //
         Persona::create([
-            'nombre_completo' => 'Juliet Brito'
+            'nombre_completo' => 'Maria Morao'
         ]);
         Persona::create([
             'nombre_completo' => 'Jennifer Benitez'
         ]);
         Persona::create([
-            'nombre_completo' => 'Kleber Salazar'
+            'nombre_completo' => 'Moises Ramos'
         ]);
     }
 }

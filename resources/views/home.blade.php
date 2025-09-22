@@ -34,7 +34,7 @@
                     <ul class="navbar-nav me-auto">
                         @can('personas.index')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('personas.index') }}">{{ __('Personas') }}</a>
+                                <a class="nav-link" href="{{ route('personas.index') }}">{{ __('Operadores') }}</a>
                             </li>
                         @endcan
                         @can('estados.index')

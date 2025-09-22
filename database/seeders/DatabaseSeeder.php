@@ -22,23 +22,27 @@ class DatabaseSeeder extends Seeder
         $this->call(EstadosSeeder::class);
         $this->call(PersonasSeeder::class);
         
-        
-        
         User::factory()->create([
-            'name' => 'monitor',
-            'email' => 'monitor@mercal.gob.ve',
+            'name' => 'Jennifer',
+            'email' => 'jennifer@mercal.gob.ve',
             'password' => bcrypt('123456'),
-        ])->assignRole('Administrador');
+        ])->assignRole('Analista');
         
         User::factory()->create([
             'name' => 'Danyerbert Rangel',
             'email' => 'danyerbert@mercal.gob.ve',
             'password' => bcrypt('123456'),
         ])->assignRole('Administrador');
+        
+        User::factory()->create([
+            'name' => 'Moises Ramos',
+            'email' => 'moisesr@mercal.gob.ve',
+            'password' => bcrypt('123456'),
+        ])->assignRole('Analista');
 
         User::factory()->create([
-            'name' => 'Jennifer',
-            'email' => 'jennifer@mercal.gob.ve',
+            'name' => 'Maria Morao',
+            'email' => 'mariamorao@mercal.gob.ve',
             'password' => bcrypt('123456'),
         ])->assignRole('Analista');
 

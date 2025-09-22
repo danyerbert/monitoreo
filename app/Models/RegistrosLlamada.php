@@ -33,7 +33,7 @@ class RegistrosLlamada extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['id_registro_llamadas', 'id_persona', 'id_estado', 'fecha_contacto', 'hora_contacto', 'numero_llamada', 'atendio_llamada', 'observaciones'];
+    protected $fillable = ['id_registro_llamadas', 'id_persona', 'id_estado', 'fecha_contacto', 'hora_contacto', 'atendio_llamada', 'observaciones'];
 
 
     /**

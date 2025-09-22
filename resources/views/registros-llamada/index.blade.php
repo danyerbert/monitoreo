@@ -45,11 +45,10 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-									    <th>Persona</th>
+									    <th>Operador</th>
 									    <th>Estado</th>
 									    <th>Fecha Contacto</th>
 									    <th>Hora Contacto</th>
-									    <th>Numero Llamada</th>
 									    <th>Atendio Llamada</th>
 									    <th>Observaciones</th>
 
@@ -64,7 +63,6 @@
 										    <td >{{ $registrosLlamada->estado->estado }}</td>
 										    <td >{{ $registrosLlamada->fecha_contacto }}</td>
 										    <td >{{ $registrosLlamada->hora_contacto }}</td>
-										    <td >{{ $registrosLlamada->numero_llamada }}</td>
 										    <td >{{ $registrosLlamada->atendio_llamada }}</td>
 										    <td >{{ $registrosLlamada->observaciones }}</td>
 

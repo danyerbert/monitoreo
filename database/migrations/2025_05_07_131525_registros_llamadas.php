@@ -19,7 +19,6 @@ return new class extends Migration
             $table->bigInteger('id_estado')->unsigned();
             $table->date('fecha_contacto');
             $table->time('hora_contacto');
-            $table->integer('numero_llamada');
             $table->string('atendio_llamada', 70);
             $table->text('observaciones', 240);
             $table->timestamps();
