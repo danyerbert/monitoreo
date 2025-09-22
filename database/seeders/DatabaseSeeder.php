@@ -45,7 +45,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'mariamorao@mercal.gob.ve',
             'password' => bcrypt('123456'),
         ])->assignRole('Analista');
-
-        //$this->call(User::class);
+        
+        User::factory()->create([
+            'name' => 'Luis Ceballos',
+            'email' => 'luisceballos@mercal.gob.ve',
+            'password' => bcrypt('12345678'),
+        ])->assignRole('Administrador');
     }
 }
