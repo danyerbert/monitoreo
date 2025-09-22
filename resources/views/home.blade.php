@@ -129,14 +129,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($noatendiollamadas as $noatendio)
+                                        @forelse ($noatendiollamadas as $noatendio)
                                             @if($noatendio->atendio_llamada == "NO")
                                             <tr>
                                                 <td >{{ $noatendio->estado->estado }}</td>
                                                 <td >{{ $noatendio->atendio_llamada }}</td>
                                             </tr>
                                             @endif
-                                        @endforeach
+                                            @empty
+                                            <tr>
+                                                <td colspan="9" class="text-center">
+                                                    No se encontraron registros de llamadas para esta fecha.
+                                                </td>
+                                            </tr>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>
