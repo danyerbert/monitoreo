@@ -126,6 +126,7 @@
                                         <tr>
                                             <th>Estado</th>
                                             <th>Atendio Llamada</th>
+                                            <th>Hora de contacto</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -134,6 +135,7 @@
                                             <tr>
                                                 <td >{{ $noatendio->estado->estado }}</td>
                                                 <td >{{ $noatendio->atendio_llamada }}</td>
+                                                <td >{{ $noatendio->hora_contacto }}</td>
                                             </tr>
                                             @endif
                                             @empty
